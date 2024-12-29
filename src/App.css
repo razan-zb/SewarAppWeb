@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.react-calendar {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.react-calendar__tile--active {
+  background-color: #73224b;
+  color: white;
+}
+
+.react-calendar {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.react-calendar__tile--active {
+  background: #73224B;
+  color: #fff;
+}
