@@ -2,10 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex: 1;
-  background-color: #cccccc;
-  justify-content: center; 
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center; 
   width: 100%;
+  height: 100vh; 
+  background-color: #f0f0f0; 
+  overflow: hidden;
+
 `;
 
 export const Container4 = styled.div`
@@ -15,14 +19,20 @@ export const Container4 = styled.div`
   gap: 20px;
   margin-left: 5px;
   margin-top: -80px; /* Adjusted for web */
+
 `;
 
 export const ContainerScrollView = styled.div`
   display: flex;
-  flex: 1;
-  background-color: #cccccc;
+  flex-direction: column; 
+  flex: 1; 
   padding: 20px; 
-  width: 100%;
+  width: 90%;
+  height: 100%; 
+  background-color: #cccccc;
+  overflow-y: auto; 
+
+
 `;
 
 export const CardRow = styled.div`
@@ -134,24 +144,31 @@ export const NamingModalContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height:100px;
 `;
 
 export const TextInputs = styled.input`
   width: 100%;
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
 `;
 
 export const SaveButton = styled.button`
   background-color: #3498db;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 10px;
   color: white;
   font-weight: bold;
 `;
 
+export const SaveButtonText = styled.span`
+  color: white;
+  font-weight: bold;
+`;
+
+export const CancelButtonText = styled.span`
+  color: white;
+`;
 export const CancelButton = styled.button`
   background-color: gray;
   padding: 10px;

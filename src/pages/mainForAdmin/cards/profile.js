@@ -1,14 +1,14 @@
 // Profile.js
 import React from 'react';
-import * as S from '../style2'; // Ensure your styled-components are compatible with the web
+import * as S from '../style2'; 
 import sewar from '../../../assets/images/SewarImage.jpg';
 import { logout } from '../../../helpers/api';
-import { useNavigate } from 'react-router-dom'; // For web navigation
+import { useNavigate } from 'react-router-dom'; 
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../../../changeLangyage';
 
 const Profile = () => {
-  const navigate = useNavigate(); // Use useNavigate instead of useRouter for web
+  const navigate = useNavigate(); 
   const { t } = useTranslation();
 
   const handleLogOut = async () => {
@@ -16,7 +16,7 @@ const Profile = () => {
     try {
       const respond = await logout();
       if (respond) {
-        navigate('/'); // Redirect to the home page
+        navigate('/'); 
       }
     } catch (error) {
       console.log(error);

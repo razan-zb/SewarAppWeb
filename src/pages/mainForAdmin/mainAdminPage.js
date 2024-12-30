@@ -41,7 +41,7 @@ const MainAdminPage = () => {
                   <S.CardTitle>{t('card2Title')}</S.CardTitle>
                 </S.Card2>
                 <S.SmallCardContainer>
-                  <S.Card3 onClick={() => handleCardPress('card3')}>
+                  <S.Card3 onClick={() => navigate('/mainForAdmin/cards/card3')}>
                     <S.CardImage src={card3} alt="Card 3" />
                     <S.CardTitle>{t('card3Title')}</S.CardTitle>
                   </S.Card3>

@@ -241,11 +241,13 @@ export const BackArrow = styled.button`
 
 // Profile
 export const ProfileContainer = styled.div`
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: center;
   background-color: #edc4d9;
   width: 100%;
+  height:100%;
+
 `;
 
 export const ProfileImage = styled.img`
@@ -269,10 +271,10 @@ export const ProfileButton = styled.button`
   background-color: #73224b;
   padding: 10px 20px;
   border-radius: 5px;
-  margin-top: 160px;
   color: white;
   font-size: 18px;
   cursor: pointer;
+  margin-top:40px;
 `;
 
 export const ProfileButtonText = styled.span`
@@ -282,7 +284,6 @@ export const ProfileButtonText = styled.span`
 
 export const TextLabel = styled.span`
   font-size: 20px;
-  margin-top: 100px;
   font-weight: bold;
 `;
 

@@ -45,9 +45,6 @@ const LanguageSelector = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-      <label htmlFor="language-selector" style={{ marginBottom: '10px', fontSize: '16px', color: '#73224B' }}>
-        Select Language:
-      </label>
       <select
         id="language-selector"
         value={selectedLanguage}

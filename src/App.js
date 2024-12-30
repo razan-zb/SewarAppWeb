@@ -9,6 +9,7 @@ import MainAdminPage from './pages/mainForAdmin/mainAdminPage'
 import Card2 from './pages/mainForAdmin/cards/card2'
 import MeasuresForOne from './pages/mainForAdmin/cards/sections/measuresForOne';
 import Card1  from './pages/mainForAdmin/cards/card1';
+import Card3  from './pages/mainForAdmin/cards/card3';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/mainForAdmin/mainAdminPage" element={<MainAdminPage />} />
           <Route path="/mainForAdmin/cards/card2" element={<Card2/>} />
           <Route path="/mainForAdmin/cards/card1" element={<Card1/>} />
+          <Route path="/mainForAdmin/cards/card3" element={<Card3/>} />
 
           <Route path="/mainForAdmin/cards/sections/measuresForOne" element={<MeasuresForOne/>} />
 
