@@ -3,7 +3,7 @@ import moment from 'moment';
 import { getDownloadURL, ref } from 'firebase/storage'; 
 import { storage } from '../firebaseConfig'; 
 
-const BASE_URL = 'http://localhost:3000/api';
+const BASE_URL = 'https://sewarappserverside.onrender.com/api';
 
 // Sending a video to the server
 export const sendVideoFirebase = async (formData) => {
