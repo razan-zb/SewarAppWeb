@@ -67,4 +67,8 @@
       "@babel/preset-react"
     ]
   }
+  ,
+  "overrides": {
+    "typescript": "^5.2.2"
+  }
 }
