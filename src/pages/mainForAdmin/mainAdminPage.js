@@ -7,7 +7,7 @@ import card2 from '../../assets/images/measuring.png';
 import card3 from '../../assets/images/sewing1.png';
 import card4 from '../../assets/images/data3.png';
 import { useTranslation } from 'react-i18next';
-import { useWindowWidth } from './cards/useWindowWidth'; // Custom hook to get screen width
+import { useWindowWidth } from './cards/useWindowWidth';
 import { useNavigate } from 'react-router-dom';
 const MainAdminPage = () => {
   const [activeTab, setActiveTab] = useState('Home');
@@ -23,6 +23,10 @@ const MainAdminPage = () => {
   const handleTabPress = (route) => {
     setActiveTab(route);
     setShowCards(route === 'Home');
+
+    if(route==='Exit'){
+      navigate('/')
+    }
   };
   return (
     <>
@@ -56,21 +60,21 @@ const MainAdminPage = () => {
               // Large Screens
               <>
                 <S.CardContainer>
-                  <S.Card1 onClick={() => handleCardPress('card1')}>
+                  <S.Card1 onClick={() => navigate('/mainForAdmin/cards/card1')}>
                     <CalendarCard />
                   </S.Card1>
 
-                  <S.CardForWeb2 onClick={() => handleCardPress('card2')}>
+                  <S.CardForWeb2 onClick={() => navigate('/mainForAdmin/cards/card2')}>
                     <S.CardImage src={card2} alt="Card 2" />
                     <S.CardTitle>{t('Measurements')}</S.CardTitle>
                   </S.CardForWeb2>
 
-                  <S.CardForWeb2 onClick={() => handleCardPress('card3')}>
+                  <S.CardForWeb2 onClick={() => navigate('/mainForAdmin/cards/card3')}>
                     <S.CardImage src={card3} alt="Card 3" />
                     <S.CardTitle>{t('Notes')}</S.CardTitle>
                   </S.CardForWeb2>
 
-                  <S.CardForWeb2 onClick={() => handleCardPress('card4')}>
+                  <S.CardForWeb2 onClick={() => navigate('/mainForAdmin/cards/card4')}>
                     <S.CardImage src={card4} alt="Card 4" />
                     <S.CardTitle>{t('Card 4')}</S.CardTitle>
                   </S.CardForWeb2>

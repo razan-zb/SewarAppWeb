@@ -228,7 +228,7 @@ export const featchCreateFashionItem = async (item) => {
   try {
     const response = await axios.post(`${BASE_URL}/fashionItem/`,item)
 
-    if(response.status==201)
+    if(response.status===201)
       return true
     return false;
 
