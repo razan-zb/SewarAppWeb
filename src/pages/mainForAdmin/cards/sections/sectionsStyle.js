@@ -13,7 +13,20 @@ export const SearchContainer = styled.div`
   width: 350px;
   margin-top: 10px;
 `;
+export const ModalInput2 = styled.input`
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  height:50px;
+  border-width: 1px;
+  border-color: #ccc;
+  border-radius: 5px;
+  text-align: left;
+  width: 250px;
 
+`;
 export const SearchInput = styled.input`
   font-size: 20px;
   color: #b30059;

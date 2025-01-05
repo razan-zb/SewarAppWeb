@@ -1,7 +1,6 @@
 // styleClientPage.js
 import styled from 'styled-components';
 
-// Replacing React Native's ImageBackground with a regular div for background images
 export const Mario = styled.div`
   width: 100%;
   height: 200px;
@@ -12,7 +11,15 @@ export const Mario = styled.div`
   justify-content: center;
   align-items: center;
 `;
+export const DetailText = styled.text`
+    font-size: 24px;
+    color: #73224B;
+    fontFamily: 'CustomFontName4';
+    text-align: center;
+    margin-bottom:5px;
+    margin-top: 10px;
 
+`;
 export const TextMario = styled.h1`
   font-style: italic;
   font-weight: bold;
@@ -145,7 +152,7 @@ export const CategoryText = styled.span`
 
 // Header and menu styles
 export const HeaderContainer = styled.div`
-  display: flex;
+   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -321,4 +328,83 @@ export const StyledFlatList = styled.div`
   overflow-x: auto; /* Enable horizontal scrolling */
   gap: 10px; /* Space between items */
 `;
+
+export const PageContainer2 = styled.div`
+  background-color: #cccccc;
+  flex-direction: column;
+  width: 100%;
+
+`;
+export const ViewSection=styled.div`
+    flex-direction: column;
+ 
+`
+export const ImageItem = styled.image`
+    width: 100%;
+    height: 700px;
+    z-index: 3;
+    resize-mode:contain;
+
+  
+`;
+
+
+export const Details=styled.div`
+  background-color: #cccccc;
+  opacity: 0.7;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  margin-top: -10px;
+    margin-top: -10px;
+    opacity: 1;
+
+
+`
+
+
+
+export const DetailTextDiscrebtion = styled(DetailText)`
+    width: 400px;
+    margin-top:20px;
+`;
+export const ImageContainer = styled.div`
+    background-color: #cccccc;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    width: 430px;
+`;
+export const BlurredBackground2 = styled.div`
+  width: 100%;
+  z-index: 1;
+  filter: blur(0px);
+  background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+export const BlurredBackground3 = styled(BlurredBackground2)`
+    width: 100%;
+    height: 700px;
+    z-index: 1;
+    position: absolute;
+
+`;
+
+export const ArrowButton=styled.button`
+   align-self:center;
+   border-radius: 5px;
+   width:40px;
+   height: 30px;
+   align-items: center;
+   justify-content: center;
+   background-color:  #b3b3b3;
+   margin-bottom:10px;
+   z-index:2000;
+   margin-top:-200px;
+   
+
+
+`
 

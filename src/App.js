@@ -14,6 +14,14 @@ import MainForClient  from './pages/client/mainForClient';
 import AboutUs from './pages/client/headerSections/aboutUs';
 import ContactUs from './pages/client/headerSections/contactUs';
 import ListOfItems from './pages/client/headerSections/listOfItems'
+import DetailsScreen from './pages/client/detailsScreen'
+
+import Card4  from './pages/mainForAdmin/cards/card4';
+import AboutUsEdit from './pages/mainForAdmin/cards/card4Sections/aboutUsEdit';
+import ContactUsEdit from './pages/mainForAdmin/cards/card4Sections/contactUsEdit'
+import ListOfItesEdit from './pages/mainForAdmin/cards/card4Sections/listOfItesEdit'
+import DetailsScreenEdit from './pages/mainForAdmin/cards/card4Sections/detailsScreenEdit'
+
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
@@ -25,12 +33,21 @@ function App() {
           <Route path="/mainForAdmin/cards/card2" element={<Card2/>} />
           <Route path="/mainForAdmin/cards/card1" element={<Card1/>} />
           <Route path="/mainForAdmin/cards/card3" element={<Card3/>} />
+          <Route path="/mainForAdmin/cards/card4" element={<Card4/>} />
+
           <Route path="/mainForAdmin/cards/sections/measuresForOne" element={<MeasuresForOne/>} />
           <Route path="/client/mainForClient" element={<MainForClient/>} />
           <Route path="/client/headerSections/aboutUs" element={<AboutUs/>} />
           <Route path="/client/headerSections/contactUs" element={<ContactUs/>} />
           <Route path="/client/headerSections/listOfItems" element={<ListOfItems/>} />
+          <Route path="/client/detailsScreen" element={<DetailsScreen/>} />
 
+          <Route path="/mainForAdmin/cards/card4Sections/aboutUsEdit" element={<AboutUsEdit/>} />
+          <Route path="/mainForAdmin/cards/card4Sections/contactUsEdit" element={<ContactUsEdit/>} />
+          <Route path="/mainForAdmin/cards/card4Sections/listOfItesEdit" element={<ListOfItesEdit/>} />
+          <Route path="/mainForAdmin/cards/card4Sections/detailsScreenEdit" element={<DetailsScreenEdit/>} />
+
+          
 
           
           {/* Add more routes as needed */}

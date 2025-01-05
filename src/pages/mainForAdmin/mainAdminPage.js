@@ -49,7 +49,7 @@ const MainAdminPage = () => {
                     <S.CardImage src={card3} alt="Card 3" />
                     <S.CardTitle>{t('card3Title')}</S.CardTitle>
                   </S.Card3>
-                  <S.Card4 onClick={() => handleCardPress('card4')}>
+                  <S.Card4 onClick={() => navigate('/mainForAdmin/cards/card4')}>
                     <S.CardImage src={card4} alt="Card 4" />
                     <S.CardTitle>{t('card4Title')}</S.CardTitle>
                   </S.Card4>
@@ -84,10 +84,8 @@ const MainAdminPage = () => {
           </>
         )}
 
-        {/* Profile Section */}
         {!showCards && <Profile />}
 
-        {/* Bottom Tab Bar */}
         <BottomTabBar onTabPress={handleTabPress} activeTab={activeTab} />
       </S.Container4>
     </>
