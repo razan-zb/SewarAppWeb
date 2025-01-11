@@ -3,6 +3,7 @@ import * as SC from './styleClientPage'; // Assuming your styles are already ada
 import Header from './header';
 import { Dimensions } from 'react-native';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa'; 
 
 const screenWidth = Dimensions.get('window').width; 
 
@@ -91,9 +92,9 @@ const MainForClient = () => {
               src={item.src}
               controls
               style={{
-                width: '100%',
+                width: 'auto',
                 maxWidth: '600px',
-                height: 'auto',
+                height: '450px',
                 marginBottom: '20px',
                 borderRadius: '8px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
@@ -102,7 +103,7 @@ const MainForClient = () => {
           ))}
         </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '10px', alignSelf: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '30px', alignSelf: 'center' ,marginTop:'30px'}}>
           {video1.map((item, index) => (
             <video
               key={index}
@@ -127,7 +128,12 @@ const MainForClient = () => {
           <SC.SmallContainer>
             <SC.TitleForPage>{type}</SC.TitleForPage>
             <SC.StyledButton onClick={() => navigateToCategory(type)}>
-            <SC.StyledButtonIcon>➡</SC.StyledButtonIcon>
+            <FaArrowRight
+                size={25}
+                color="#73224B"
+                style={{ cursor: 'pointer' }}
+                onClick={() => navigate(`/mainForAdmin/cards/card4Sections/listOfItemsEdit?category=${type}`)}
+              />
             </SC.StyledButton>
           </SC.SmallContainer>
           <SC.StyledFlatList style={{ display: 'flex', flexDirection: 'row', overflowX: 'scroll' }}>

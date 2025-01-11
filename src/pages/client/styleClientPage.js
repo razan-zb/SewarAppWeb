@@ -284,6 +284,14 @@ export const BlurredBackground = styled.div`
 export const MaroiImage = styled.img`
     width: 400px;
     height: 230px;
+
+    @media (min-width: 600px) {
+      object-fit: cover ;
+      width: 100%;
+      height: 500px;
+      
+
+    }
 `;
 
 // Scroll Container for Web
@@ -309,12 +317,14 @@ export const FirstView = styled.div`
 
 export const firstView = styled.div`
   width: 100%; 
-  height: 230px; /* Default height */
+  height: 230px; 
   justify-content: center;
   align-items: center;
   @media (min-width: 600px) {
-    width: 100%; /* Adjust width as needed */
-    height: 600px;
+    width: auto; 
+    height: 500px;
+    
+
   }
 `;
 
