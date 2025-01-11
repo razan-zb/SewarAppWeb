@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5468914f.css",
+    "main.js": "/static/js/main.9573f0fc.js",
+    "static/js/453.99cc8db7.chunk.js": "/static/js/453.99cc8db7.chunk.js",
+    "static/media/data3.png": "/static/media/data3.ca70051c553d721e55f1.png",
+    "static/media/SewarImage.jpg": "/static/media/SewarImage.71db0be29fd002786a1e.jpg",
+    "static/media/measuring.png": "/static/media/measuring.de701696b2b864e238dc.png",
+    "static/media/sewing1.png": "/static/media/sewing1.10d49e8d3caff8fd9a6c.png",
+    "static/media/SewarLogo1.png": "/static/media/SewarLogo1.b15b899b26d76890cd64.png",
+    "static/media/SewarLogo.png": "/static/media/SewarLogo.ef7ac6526aaf0e906ae1.png",
+    "static/media/Frame1.png": "/static/media/Frame1.8068d0dfff534e97442c.png",
+    "static/media/NewBack.png": "/static/media/NewBack.eede1c6756ff755663cb.png",
+    "index.html": "/index.html",
+    "main.5468914f.css.map": "/static/css/main.5468914f.css.map",
+    "main.9573f0fc.js.map": "/static/js/main.9573f0fc.js.map",
+    "453.99cc8db7.chunk.js.map": "/static/js/453.99cc8db7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5468914f.css",
+    "static/js/main.9573f0fc.js"
+  ]
+}
