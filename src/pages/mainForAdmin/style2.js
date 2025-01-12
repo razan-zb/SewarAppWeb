@@ -212,7 +212,6 @@ export const TabBarContainer = styled.div`
   height: 80px;
   border-top: 1px solid #ddd;
   @media (max-width: 600px) {
-    margin-top:20px;
 
   }
 `;
@@ -305,6 +304,8 @@ export const ProfileName = styled.h1`
 export const ProfileInfo = styled.p`
   font-size: 18px;
   color: gray;
+  margin-top:-10px;
+
 `;
 
 export const ProfileButton = styled.button`
@@ -315,6 +316,7 @@ export const ProfileButton = styled.button`
   font-size: 18px;
   cursor: pointer;
   margin-top:40px;
+  border:none;
 `;
 
 export const ProfileButtonText = styled.span`
@@ -325,6 +327,7 @@ export const ProfileButtonText = styled.span`
 export const TextLabel = styled.span`
   font-size: 20px;
   font-weight: bold;
+  margin-top:20px;
 `;
 
 export const ListContainer = styled.div`
@@ -354,7 +357,8 @@ export const ContentContainer = styled.button`
 export const CustomName = styled.span`
   font-size: 18px;
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Replacing Platform-specific logic */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color:#73224b;
 `;
 
 export const NoDataText = styled.span`

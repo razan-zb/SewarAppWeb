@@ -44,7 +44,7 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px' }}>
       <select
         id="language-selector"
         value={selectedLanguage}
