@@ -94,18 +94,21 @@ export const CardForWeb2 = styled.div`
 
 export const Card1 = styled.div`
   width: 94%;
-  max-width: 400px;
+  max-width: 380px;
   background-color: #cccccc;
+
   border-radius: 15px;
   @media (max-width: 600px) {
     text-align:center;
-    padding:20px;
+    padding:10px;
   }
 `;
 
 export const Card2 = styled(Card)`
   width: ${cardWidth / 2}px;
   height: 340px;
+  background-color: transparent;
+
   align-self: flex-end;
   @media (max-width: 600px) {
     text-align:center;
@@ -119,14 +122,23 @@ export const Card2 = styled(Card)`
 `;
 
 export const Card3 = styled(Card)`
-  height: 140px;
+  height: 120px;
   width: 95%; 
+  background-color: transparent;
+
 `;
 
 export const Card4 = styled(Card)`
   height: 150px;
   width: 95%;
-  margin-top: 30px;
+
+  @media(max-width: 600px) {
+    height: 150px;
+    background-color: transparent;
+    margin-top: 0px;
+
+
+  }
 `;
 
 export const SmallCardContainer = styled.div`
@@ -167,7 +179,7 @@ export const CardImage2 = styled.img`
   border-radius: 10px;
 
   @media (max-width: 600px) {
-     margin-top:25px;
+     margin-top:10px;
   }
 `;
 
