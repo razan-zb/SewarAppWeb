@@ -156,13 +156,25 @@ export const SmallCardContainer = styled.div`
 export const CardImage = styled.img`
   width: 100%;
   border-radius: 10px;
+
+
+`;
+
+
+export const CardImage2 = styled.img`
+  width: 100%;
+  border-radius: 10px;
+
+  @media (max-width: 600px) {
+    padding:20px
+
+  }
 `;
 
 export const CardTitle = styled.span`
     font-size: 16px;
     font-weight: bold;
     color: #73224B;
-
   @media (min-width: 600px) {
     margin-top: 10px;
     display: block;
@@ -170,6 +182,7 @@ export const CardTitle = styled.span`
     font-weight: bold;
     color: #73224b;
   }
+
 `;
 
 // Bottom bar styling
