@@ -186,7 +186,7 @@ export const TaskTitle = styled.span`
   font-weight: bold;
   margin-bottom: 10px;
   color: #73224B;
-  font-family: 'CustomFontName6';
+  font-family: 'TheAmsterdam';
   text-align: left;
 `;
 
@@ -315,6 +315,7 @@ export const CardStyle = styled.div`
 export const CalendarContainer = styled.div`
   border-top: 1px solid #73224B;
   padding:10px;
+  align-self:center;
 
 `;
 

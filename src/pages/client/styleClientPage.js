@@ -1,6 +1,7 @@
 // styleClientPage.js
 import styled from 'styled-components';
 
+
 export const Mario = styled.div`
   width: 100%;
   height: 200px;
@@ -191,6 +192,8 @@ export const MenuText = styled.h1`
   font-weight: bold;
   color: #73224b;
   margin-top: 20px;
+  font-family: 'TheAmsterdam';
+
 `;
 
 export const MenuItemContainer = styled.div`
@@ -209,8 +212,7 @@ export const TitleForPage = styled.h2`
   color: #73224b;
   font-weight: bold;
   margin-left: 20px;
-  font-family: 'Arial, sans-serif';
-`;
+  font-family: 'Crisa';`;
 
 export const StyledButton = styled.button`
   background-color: transparent;

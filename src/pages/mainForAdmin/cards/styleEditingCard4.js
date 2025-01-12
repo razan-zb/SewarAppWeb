@@ -269,7 +269,8 @@ export const MenuText = styled.span`
   font-weight: bold;
   color: #73224b;
   cursor: pointer;
-  font-family: 'CustomFontName6', Arial, sans-serif;
+  font-family: 'TheAmsterdam';
+
 `;
 
 

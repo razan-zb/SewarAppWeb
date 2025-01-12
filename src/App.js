@@ -15,6 +15,7 @@ import AboutUs from './pages/client/headerSections/aboutUs';
 import ContactUs from './pages/client/headerSections/contactUs';
 import ListOfItems from './pages/client/headerSections/listOfItems'
 import DetailsScreen from './pages/client/detailsScreen'
+import { GlobalStyle } from './GlobalStyle';
 
 import Card4  from './pages/mainForAdmin/cards/card4';
 import AboutUsEdit from './pages/mainForAdmin/cards/card4Sections/aboutUsEdit';
@@ -25,6 +26,7 @@ import DetailsScreenEdit from './pages/mainForAdmin/cards/card4Sections/detailsS
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
+      <GlobalStyle />
       <Router>
         <Routes>
           <Route path="/" element={<Home/>} />

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import * as SC from './styleClientPage'; // Assuming your styles are already adapted for web
+import * as SC from './styleClientPage'; 
 import Header from './header';
 import { Dimensions } from 'react-native';
 import { useNavigate } from 'react-router-dom';
@@ -91,6 +91,9 @@ const MainForClient = () => {
               key={index}
               src={item.src}
               controls
+              autoPlay
+              playsInline
+              muted
               style={{
                 width: 'auto',
                 maxWidth: '600px',
