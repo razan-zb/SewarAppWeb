@@ -178,7 +178,7 @@ export const CancelButton = styled.button`
 
 export const TaskContainer = styled.div`
 flex: 1;
-padding: 20px;
+padding: 10px;
 `;
 
 export const TaskTitle = styled.span`
@@ -313,8 +313,7 @@ export const CardStyle = styled.div`
 `;
 
 export const CalendarContainer = styled.div`
-  border-radius: 10px;
-  border: 3px solid #73224B;
+  border-top: 1px solid #73224B;
   padding:10px;
 
 `;

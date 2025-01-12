@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const MeasuresForOne = () => {
   const location = useLocation();
-  const user = location.state;
+  const user = location.state||{};
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [name, setName] = useState('');

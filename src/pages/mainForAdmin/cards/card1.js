@@ -28,7 +28,7 @@ const Card1 = () => {
 
   useEffect(() => {
     setStartTime(moment.utc(`${selectedDate} ${startHour}`, 'YYYY-MM-DD HH:mm').toDate());
-  }, [endHour]);
+  }, [endHour, selectedDate, startHour]);
 
   const transformTasksData = (tasks1) => {
     return tasks1.reduce((acc, task) => {
@@ -60,6 +60,7 @@ const Card1 = () => {
 
   useEffect(() => {
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const CreateTask = async () => {

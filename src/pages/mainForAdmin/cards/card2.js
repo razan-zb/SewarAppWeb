@@ -47,7 +47,7 @@ const Card2 = () => {
 
   // Handle "+" button press
   const handlePress = () => {
-    navigate('/mainForAdmin/cards/sections/measuresForOne');
+    navigate('/mainForAdmin/cards/sections/measuresForOne', { state: null });
   };
 
   // Handle client item press
