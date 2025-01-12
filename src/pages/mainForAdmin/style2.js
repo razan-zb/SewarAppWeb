@@ -113,7 +113,7 @@ export const Card2 = styled(Card)`
   @media (max-width: 600px) {
     text-align:center;
     align-self: center;
-    height: 340px;
+    height: 350px;
     margin-top:0px;
 
   }
