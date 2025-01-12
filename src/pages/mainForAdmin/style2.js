@@ -55,7 +55,10 @@ export const CardContainer = styled.div`
 
   @media (max-width: 600px) {
     display: flex;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
   }
   
 `;
@@ -104,13 +107,13 @@ export const Card1 = styled.div`
 
 export const Card2 = styled(Card)`
   width: ${cardWidth / 2}px;
-  height: 330px;
+  height: 340px;
   align-self: flex-end;
   @media (max-width: 600px) {
     text-align:center;
     align-self: center;
-    height: 350px;
-    margin-top:2px;
+    height: 340px;
+    margin-top:0px;
 
   }
 
@@ -118,7 +121,7 @@ export const Card2 = styled(Card)`
 `;
 
 export const Card3 = styled(Card)`
-  height: 150px;
+  height: 140px;
   width: 95%; 
 `;
 
@@ -166,7 +169,7 @@ export const CardImage2 = styled.img`
   border-radius: 10px;
 
   @media (max-width: 600px) {
-     margin-top:10px;
+     margin-top:15px;
   }
 `;
 
