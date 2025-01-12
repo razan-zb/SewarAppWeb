@@ -15,22 +15,25 @@ export const AboutUsContainer = styled.div`
 `;
 
 export const BlurredBackground = styled.div`
-  position: absolute;
-  height: 500px;
-  width: 300px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   z-index: 1;
-  filter: blur(10px); /* Adjust the blur level */
-  background-image: url(${props => props.src});
+  filter: blur(8px); /* Reduced blur for a cleaner effect */
+  background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;
+  opacity: 0.7; /* Add slight transparency */
 `;
 
 export const CardImage = styled.img`
-  height: 500px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
   border-radius: 15px;
   z-index: 2;
-`;
+  object-fit: cover;
+`
 
 export const ContentContainer = styled.div`
   display: flex;
@@ -56,7 +59,7 @@ export const SectionTitle = styled.h1`
   color: #73224B;
   margin-bottom: 10px;
   text-align: left;
-  font-family: 'CustomFontName6';
+  font-family: 'TheAmsterdam';
 `;
 
 export const DescriptionText = styled.p`
@@ -139,20 +142,29 @@ export const ContactContainer = styled.div`
 export const EmptyView = styled.div``;
 
 export const StyledFlatList1 = styled.div`
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
   margin-top: 20px;
 `;
 
+
 export const Card1 = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
   background-color: #fff;
-  box-shadow: 0px 4px 6px rgba(115, 34, 75, 0.5);
-  align-self: center;
+  box-shadow: 0px 6px 12px rgba(115, 34, 75, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0px 8px 16px rgba(115, 34, 75, 0.4);
+  }
 `;
+
 
 export const CardName = styled.p`
   font-size: 18px;

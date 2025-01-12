@@ -177,7 +177,7 @@ export const SectionTitle = styled.h1`
   color: #73224B;
   margin-bottom: 10px;
   text-align: left;
-  font-family: 'CustomFontName6';
+  font-family: 'TheAmsterdam';
 `;
 export const TextSection = styled.div`
   width: 100%;

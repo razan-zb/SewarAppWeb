@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../header';
 import * as S from './styleHeader';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {
   const location = useLocation(); 
@@ -10,14 +9,21 @@ const ItemList = () => {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
-
+  // Fetch category from URL and update state
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const categoryParam = searchParams.get('category');
-    setCategory(categoryParam);
+    if (categoryParam !== category) {
+      setCategory(categoryParam); // Only update if categoryParam is different
+    }
+  }, [location.search, category]);
 
-    getData(categoryParam);
-  }, [location.search]);
+  // Fetch data whenever category changes
+  useEffect(() => {
+    if (category) {
+      getData();
+    }
+  }, [category]);
 
   // Navigate to item details
   const handlePressItem = (item) => {
@@ -51,11 +57,12 @@ const ItemList = () => {
       <S.StyledFlatList1>
         {items.map((item, index) => (
           <S.Card1 key={index} onClick={() => handlePressItem(item)}> {/* Use onClick for web */}
+           
+            <S.CardImage src={item.photos[0]} />
             <S.BlurredBackground
               style={{ filter: 'blur(15px)' }}
               src={item.photos[0]} // Use src for web-compatible images
             />
-            <S.CardImage src={item.photos[0]} />
           </S.Card1>
         ))}
       </S.StyledFlatList1>

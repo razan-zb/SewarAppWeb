@@ -4,7 +4,7 @@ import logo from '../../assets/images/SewarLogo.png'; // Ensure the logo path is
 import { useTranslation } from 'react-i18next'; // For translation
 import { FaArrowLeft, FaBars, FaInstagram, FaWhatsapp } from 'react-icons/fa'; // React icons
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'; // Dropdown icons
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -12,6 +12,7 @@ const Header = () => {
   const [subMenuVisible, setSubMenuVisible] = useState(false);
   const [types, setTypes] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const fetchData = async () => {
     try {
@@ -40,6 +41,7 @@ const Header = () => {
   };
 
   const navigateToCategory = (category) => {
+    navigate(`/client/mainForClient`)
     navigate(`/client/headerSections/listOfItems?category=${category}`);
     setMenuVisible(!menuVisible);
   };
@@ -48,12 +50,20 @@ const Header = () => {
     window.open(url, '_blank');
   };
 
+  const goBack = () => {
+    if (location.pathname === '/client/mainForClient') {
+      navigate('/');
+    } else {
+      navigate('/client/mainForClient');
+    }
+  };
+
   return (
     <SC.HeaderWrapper>
       <SC.HeaderContainer>
         {/* Back Button */}
         <button
-          onClick={() => navigate(-1)}
+         onClick={goBack}
           style={{ background: 'none', border: 'none', cursor: 'pointer' }} >
           <FaArrowLeft size={30} color="#73224B" />
         </button>
