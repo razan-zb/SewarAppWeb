@@ -57,8 +57,6 @@ export const CardContainer = styled.div`
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
-
-
   }
   
 `;
@@ -169,7 +167,7 @@ export const CardImage2 = styled.img`
   border-radius: 10px;
 
   @media (max-width: 600px) {
-     margin-top:15px;
+     margin-top:25px;
   }
 `;
 
