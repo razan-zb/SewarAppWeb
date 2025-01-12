@@ -166,8 +166,7 @@ export const CardImage2 = styled.img`
   border-radius: 10px;
 
   @media (max-width: 600px) {
-    padding:20px
-
+     margin-top:10px;
   }
 `;
 

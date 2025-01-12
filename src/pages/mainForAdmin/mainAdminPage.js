@@ -50,7 +50,7 @@ const MainAdminPage = () => {
                     <S.CardTitle>{t('card3Title')}</S.CardTitle>
                   </S.Card3>
                   <S.Card4 onClick={() => navigate('/mainForAdmin/cards/card4')}>
-                    <S.CardImage src={card4} alt="Card 4" />
+                    <S.CardImage2 src={card4} alt="Card 4" />
                     <S.CardTitle>{t('card4Title')}</S.CardTitle>
                   </S.Card4>
                 </S.SmallCardContainer>
@@ -75,7 +75,7 @@ const MainAdminPage = () => {
                   </S.CardForWeb2>
 
                   <S.CardForWeb2 onClick={() => navigate('/mainForAdmin/cards/card4')}>
-                    <S.CardImage2 src={card4} alt="Card 4" />
+                    <S.CardImage src={card4} alt="Card 4" />
                     <S.CardTitle>{t('Card 4')}</S.CardTitle>
                   </S.CardForWeb2>
                 </S.CardContainer>
