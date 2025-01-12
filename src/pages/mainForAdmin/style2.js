@@ -14,6 +14,13 @@ export const Container4 = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    height: 820px;
+
+  }
+
+
 `;
 
 export const Container = styled.div`
@@ -45,11 +52,11 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height:100%;
 
   @media (max-width: 600px) {
     display: flex;
     margin-top: 5px;
+  }
   
 `;
 
@@ -78,14 +85,17 @@ export const CardForWeb2 = styled.div`
   cursor: pointer;
   padding: 10px;
   margin-top:30px;
+
+  @media (max-width: 600px) {
+
+  }
 `;
 
 export const Card1 = styled.div`
-  width: 100%;
+  width: 94%;
   max-width: 400px;
-  background-color: white;
+  background-color: #cccccc;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
     text-align:center;
     padding:20px;
@@ -176,6 +186,10 @@ export const TabBarContainer = styled.div`
   width: 100%;
   height: 80px;
   border-top: 1px solid #ddd;
+  @media (max-width: 600px) {
+    margin-top:20px;
+
+  }
 `;
 
 export const TabButton = styled.div`
