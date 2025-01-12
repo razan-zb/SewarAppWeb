@@ -41,10 +41,11 @@ export const Subtitle = styled.h2`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height:100%;
 
   @media (max-width: 600px) {
     display: flex;
