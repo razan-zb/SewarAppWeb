@@ -255,7 +255,7 @@ const changeData = async () => {
               {items
                 .filter(item => item.type === type)
                 .map(item => (
-                  <SC.Card key={item._id} onClick={() => navigate(`/mainForAdmin/cards/card4Sections/listOfItesEdit?id=${item._id}`)}>
+                  <SC.Card key={item._id} onClick={() => navigate(`/mainForAdmin/cards/card4Sections/detailsScreenEdit?id=${item._id}`)}>
                     <SC.BlurredBackground style={{ backgroundImage: `url(${item.photos[0]})` }} />
                     <SC.CardImage src={item.photos[0]} alt="Card" />
                   </SC.Card>

@@ -21,13 +21,19 @@ const DetailsScreen = () => {
 
   useEffect(() => {
     fetchData();
-  }, [id]);
+  }, []);
 
   const fetchData = async () => {
     try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
       const results = localStorage.getItem('fashionItems');
       const parsedResults = JSON.parse(results);
       const foundItem = parsedResults.find((item) => item._id === id);
+
+
+
 
       if (foundItem) {
         const temps = foundItem.photos.map((photoUrl, index) => ({
@@ -87,20 +93,21 @@ const DetailsScreen = () => {
   return item1 ? (
     <SC.PageContainer2>
       <Header />
-      <SC.ViewSection height={activeTab ? 'auto' : '100%'}>
+      <SC.ViewSection>
         <SC.Button44 onClick={() => setIsEditing(!isEditing)}>
-           <>{isEditing ? <FaTimes size="lg" color="white" /> : <FaPencilAlt size="lg" color="white" />}</>
+           <>{isEditing ? <FaTimes size="24" color="white" /> : <FaPencilAlt size="24" color="white" />}</>
           <SC.ButtonText>{isEditing ? 'Cancel' : 'Edit'}</SC.ButtonText>
         </SC.Button44>
 
-        <div style={{ display: 'flex', overflowX: 'auto' }}>
+        <SC.ScrollContainer2>
           {TheImages.map((item, index) => (
-            <SC.ImageContainer key={index} height={activeTab ? 500 : 700}>
-              <SC.BlurredBackground3 style={{ backgroundImage: `url(${item.src})` }} />
-              <SC.ImageItem src={item.src} alt={`Product ${index + 1}`} />
-            </SC.ImageContainer>
-          ))}
-        </div>
+              <SC.ImageContainer key={index} height={activeTab ? 500 : 500}>
+                <SC.ImageItem src={item.src} alt={`Product ${index + 1}`} />
+              </SC.ImageContainer>
+            ))}
+        </SC.ScrollContainer2>
+
+        
 
         <SC.DotContainer>
           {TheImages?.map((_, index) => (
@@ -109,7 +116,7 @@ const DetailsScreen = () => {
         </SC.DotContainer>
 
         <SC.ArrowButton onClick={handleTabPress} activeTab={activeTab}>
-         <>{!activeTab ? <FaArrowUp size="lg" color="#73224B" /> : <FaArrowDown size="lg" color="#73224B" />}</>
+         <>{!activeTab ? <FaArrowUp size="24" color="#73224B" /> : <FaArrowDown size="24" color="#73224B" />}</>
         </SC.ArrowButton>
       </SC.ViewSection>
 

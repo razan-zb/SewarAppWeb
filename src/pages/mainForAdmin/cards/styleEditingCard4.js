@@ -32,12 +32,8 @@ export const StyledVideo2 = styled.video`
   margin: 0 auto;
 `;
 export const ContactContainer = styled.div`
-  background-color: #f3d8e6; 
-  height: 95%;
   background-color: #cccccc; 
-  height: 95%;
-  justify-content: center;
-
+  height: 90vh;
 `;
 export const ContactText = styled.text`
   font-size: 16px;
@@ -57,6 +53,7 @@ export const HeaderTitle = styled.text`
 `;
 export const Header = styled.div`
   height: 60px;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #73224B; 
@@ -121,12 +118,9 @@ export const CardImage = styled.img`
 `;
 // Container for the page
 export const PageContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
-
+  background-color: white;
 `;
 export const ContentContainer = styled.div`
   display: flex;
@@ -210,10 +204,19 @@ export const TitleForPage = styled.h2`
 `;
 
 // Scroll container for vertical scrolling
+export const ScrollContainer2 = styled.div`
+   display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    width: 100vw; /* Full width of viewport */
+`;
+
+// Scroll container for vertical scrolling
 export const ScrollContainer = styled.div`
   background-color: #cccccc;
   padding: 20px;
 `;
+
 
 // Button with circular style
 export const CircleButton = styled.button`
@@ -279,23 +282,25 @@ export const MenuText = styled.span`
 
 `;
 
-
 export const Input1 = styled.input`
-  width: 100%;
   height: 40px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 15px;
   padding: 0 10px;
-  font-size: 16px;
+  width:90%;
+  background-color: #fff; /* White background for inputs */
 `;
 
-export const FormContainer = styled.form`
-  background-color: #fff;
+export const FormContainer = styled.div`
+  display:flex;
+  background-color: #fff; 
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  flex-direction:column;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 150px;
+    gap:10px;
+
 `;
 
 
@@ -330,14 +335,21 @@ export const miniView = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-  align-self: center;
-  margin-top: ${({ activeTab }) => (activeTab ? '-250px' : '-70px')};
+  align-self:center;
+   border-radius: 5px;
+   width:40px;
+   height: 30px;
+   align-items: center;
+   justify-content: center;
+   background-color:  #b3b3b3;
+   margin-bottom:10px;
+   z-index:2000;
+   margin-top:15px;
+   border:none;
 `;
 
 export const DotContainer = styled.div`
+  display:flex;
   flex-direction: row;
   bottom: 10px;
   align-self: center;
@@ -402,9 +414,11 @@ export const PageContainer2 = styled.div`
 `;
 
 export const ViewSection = styled.div`
-  display: flex;
+   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100vw; 
+  overflow-x: hidden; 
 `;
 
 export const Button44 = styled.button`
@@ -419,6 +433,7 @@ export const Button44 = styled.button`
   padding: 10px;
   color: white;
   cursor: pointer;
+  align-self:center;
 
   &:hover {
     background-color: #7a0060;
@@ -426,16 +441,15 @@ export const Button44 = styled.button`
 `;
 
 export const ImageContainer = styled.div`
-  background-color: #cccccc;
-  height: 700px;
-  justify-content: center;
-  align-items: center;
-  width: 430px;
+  flex: none; /* Prevent shrinking */
+  width: 100vw; /* Full width of the viewport */
+  position: relative;
+  scroll-snap-align: start; /* Snap alignment */
 `;
 
 export const ImageItem = styled.img`
     width: 100%;
-    height: 700px;
+    height: 600px;
     z-index: 3;
     resize-mode:contain;
 `;

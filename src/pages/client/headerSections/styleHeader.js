@@ -14,7 +14,7 @@ export const FixedHeaderContainer = styled.div`
   background-color: #fff; /* Same as page background */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
 `;
-// 
+
 export const AboutUsContainer = styled.div`
   display: flex;
   flex-direction: column;

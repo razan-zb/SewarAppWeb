@@ -75,7 +75,7 @@ const ContactUs = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <S.Button type="submit" disabled={loading}>
+          <S.Button onClick={sendEmail} disabled={loading}> 
             <S.ButtonText>{loading ? 'Sending...' : 'Send Message'}</S.ButtonText>
           </S.Button>
         </S.FormContainer>
