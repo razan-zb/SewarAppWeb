@@ -56,12 +56,12 @@ const ItemList = () => {
 
       <S.StyledFlatList1>
         {items.map((item, index) => (
-          <S.Card1 key={index} onClick={() => handlePressItem(item)}> {/* Use onClick for web */}
+          <S.Card1 key={index} onClick={() => handlePressItem(item)}> 
            
             <S.CardImage src={item.photos[0]} />
             <S.BlurredBackground
               style={{ filter: 'blur(15px)' }}
-              src={item.photos[0]} // Use src for web-compatible images
+              src={item.photos[0]} 
             />
           </S.Card1>
         ))}

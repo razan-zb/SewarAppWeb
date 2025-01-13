@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as SC from './styleClientPage'; 
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown,FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const DetailsScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [item1, setItem] = useState(null);
   const [TheImages, setImages] = useState([]);
   const [activeTab, setActiveTab] = useState(false);
+  const navigate = useNavigate();
 
-  // Simulating fetching data from localStorage
   const fetchData = async () => {
     const results = localStorage.getItem('fashionItems');
     const parsedResults = JSON.parse(results);
@@ -42,15 +43,19 @@ const DetailsScreen = () => {
 
   return item1 ? (
     <SC.PageContainer2>
-      <SC.ViewSection height={activeTab ? 'auto' : '100%'}>
-        <div style={{ display: 'flex', overflowX: 'auto', height: activeTab ? '500px' : '700px' }}>
+      <SC.TopContainer>
+        <FaArrowLeft onClick={() => navigate(-1)} style={{ marginLeft: '20px' ,color:'#fff'}} />
+      </SC.TopContainer>
+      
+      <SC.ViewSection>
+        <SC.ScrollContainer>
           {TheImages.map((item, index) => (
             <SC.ImageContainer key={item.id} height={activeTab ? 500 : 700}>
               <SC.BlurredBackground3 style={{ backgroundImage: `url(${item.src})` }} />
               <SC.ImageItem src={item.src} alt={`Photo ${index + 1}`} />
             </SC.ImageContainer>
           ))}
-        </div>
+        </SC.ScrollContainer>
 
         <SC.DotContainer>
           {TheImages?.map((_, index) => (
@@ -58,8 +63,8 @@ const DetailsScreen = () => {
           ))}
         </SC.DotContainer>
 
-        <SC.ArrowButton onClick={handleTabPress} activeTab={activeTab}>
-          <>{!activeTab ? <FaArrowUp size="lg" color="#73224B" /> : <FaArrowDown size="lg" color="#73224B" />}</>
+        <SC.ArrowButton onClick={handleTabPress}>
+          {!activeTab ? <FaArrowUp size="24" color="#73224B" /> : <FaArrowDown size="24" color="#73224B" />}
         </SC.ArrowButton>
       </SC.ViewSection>
 

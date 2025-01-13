@@ -15,10 +15,11 @@ export const Mario = styled.div`
 export const DetailText = styled.text`
     font-size: 24px;
     color: #73224B;
-    fontFamily: 'CustomFontName4';
     text-align: center;
     margin-bottom:5px;
     margin-top: 10px;
+    font-family: 'Crisa';
+
 
 `;
 export const TextMario = styled.h1`
@@ -256,7 +257,7 @@ export const Dot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: ${(props) => (props.active ? '#000' : '#fff')};
+  background-color: ${(active) => (active ? '#000' : '#fff')};
   margin: 0 4px;
 `;
 
@@ -298,12 +299,10 @@ export const MaroiImage = styled.img`
 
 // Scroll Container for Web
 export const ScrollContainer = styled.div`
-  background-color: #cccccc;
-  overflow-x: auto; 
-  display: flex; 
-  flex-wrap: nowrap; 
-  width: 100%;
-
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  width: 100vw; /* Full width of viewport */
 `;
 
 // First View with Responsive Layout
@@ -335,41 +334,70 @@ export const firstView = styled.div`
 // Styled List for Web
 export const StyledFlatList = styled.div`
   display: flex;
-  flex-direction: row; /* Align items horizontally */
-  padding: 10px 0; /* Add padding */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 10px; /* Space between items */
+  flex-direction: row; 
+  padding: 10px 0; 
+  overflow-x: auto; 
+  gap: 10px; 
 `;
 
 export const PageContainer2 = styled.div`
-  background-color: #cccccc;
+  display:flex;
   flex-direction: column;
   width: 100%;
+  background-color: #CCCCCC;
+  height:100%;
 
-`;
-export const ViewSection=styled.div`
-    flex-direction: column;
- 
-`
-export const ImageItem = styled.image`
-    width: 100%;
-    height: 700px;
-    z-index: 3;
-    resize-mode:contain;
 
   
+
+`;
+
+export const TopContainer = styled.div`
+  display: flex;
+  height:55px;
+  align-items: center;
+  font-size:24px;
+  cursor:pointer;
+  background-color: #73224B;
+
+  
+`;
+export const ViewSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100vw; 
+  overflow-x: hidden; 
+`;
+
+
+
+
+export const ImageContainer = styled.div`
+  flex: none; /* Prevent shrinking */
+  width: 100vw; /* Full width of the viewport */
+  height: ${(props) => (props.height ? `${props.height}px` : '700px')};
+  position: relative;
+  scroll-snap-align: start; /* Snap alignment */
+`;
+
+export const ImageItem = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 
 export const Details=styled.div`
+  display:flex;
+  flex-direction:column;
   background-color: #cccccc;
   opacity: 0.7;
   align-items: center;
   width: 100%;
   height: 250px;
   margin-top: -10px;
-    margin-top: -10px;
-    opacity: 1;
+  opacity: 1;
 
 
 `
@@ -380,13 +408,7 @@ export const DetailTextDiscrebtion = styled(DetailText)`
     width: 400px;
     margin-top:20px;
 `;
-export const ImageContainer = styled.div`
-    background-color: #cccccc;
-    height: 700px;
-    justify-content: center;
-    align-items: center;
-    width: 430px;
-`;
+
 export const BlurredBackground2 = styled.div`
   width: 100%;
   z-index: 1;
@@ -414,7 +436,8 @@ export const ArrowButton=styled.button`
    background-color:  #b3b3b3;
    margin-bottom:10px;
    z-index:2000;
-   margin-top:-200px;
+   margin-top:15px;
+   border:none;
    
 
 
