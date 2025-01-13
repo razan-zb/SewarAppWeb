@@ -49,7 +49,9 @@ const ItemList = () => {
 
   return category ? (
     <S.PageContainer>
-      <Header />
+      <S.FixedHeaderContainer>
+        <Header />
+      </S.FixedHeaderContainer>
       <S.TitleForPage6>
         {category === 'All' ? 'Full Catalog' : `${category} Catalog`}
       </S.TitleForPage6>

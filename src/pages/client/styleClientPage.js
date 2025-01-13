@@ -12,7 +12,7 @@ export const Mario = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const DetailText = styled.text`
+export const DetailText = styled.span`
     font-size: 24px;
     color: #73224B;
     text-align: center;
@@ -38,7 +38,14 @@ export const PageContainer = styled.div`
   min-height: 100vh;
   background-color: #fff;
 `;
-
+export const FixedHeaderContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff; /* Same as page background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+`;
 // Video components
 export const StyledVideo = styled.video`
   width: 80%;
@@ -106,21 +113,21 @@ export const SmallContainer = styled.div`
   align-items: center;
   height: 50px;
   margin-top: 15px;
+
+
 `;
 
-// Card and category styles
 export const Card = styled.div`
+  min-width: 180px; 
+  height: 300px; /* Adjust height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   border-radius: 10px;
-  position: relative; /* To position the blurred background inside the card */
   background-color: #fff;
   box-shadow: 0px 5px 10px rgba(115, 34, 75, 0.5);
-  overflow: hidden; /* Ensures the blurred background doesn't overflow the card */
-  width: 220px; /* Card width */
-  height: 320px; /* Card height */
+  cursor: pointer;
+  position: relative;
 `;
 
 export const CategoryBar = styled.div`
@@ -263,9 +270,10 @@ export const Dot = styled.div`
 
 // Images
 export const CardImage = styled.img`
-  height: 300px;
-  width: 200px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
   z-index: 2;
 `;
 
@@ -334,10 +342,13 @@ export const firstView = styled.div`
 // Styled List for Web
 export const StyledFlatList = styled.div`
   display: flex;
-  flex-direction: row; 
-  padding: 10px 0; 
-  overflow-x: auto; 
-  gap: 10px; 
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  scroll-behavior: smooth; 
+  white-space: nowrap; 
+  margin-left:10px;
 `;
 
 export const PageContainer2 = styled.div`

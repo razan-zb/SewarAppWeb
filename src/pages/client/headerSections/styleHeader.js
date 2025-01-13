@@ -6,7 +6,15 @@ export const PageContainer = styled.div`
   flex-direction: column;
   background-color: white;
 `;
-
+export const FixedHeaderContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff; /* Same as page background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+`;
+// 
 export const AboutUsContainer = styled.div`
   display: flex;
   flex-direction: column;

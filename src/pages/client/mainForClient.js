@@ -72,7 +72,9 @@ const MainForClient = () => {
 
   return (
     <SC.PageContainer>
-      <Header />
+      <SC.FixedHeaderContainer>
+        <Header />
+      </SC.FixedHeaderContainer>
 
       {/* Image Carousel */}
       <SC.ScrollContainer ref={scrollViewRef} style={{ overflowX: 'scroll', display: 'flex', flexDirection: 'row' }}>

@@ -89,35 +89,35 @@ export const BlurredBackground = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 200px;
-  height: 270px;
+  min-width: 180px; 
+  height: 300px; /* Adjust height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 5px 10px rgba(115, 34, 75, 0.5);
-  position: relative;
   cursor: pointer;
-  overflow: hidden;
+  position: relative;
 `;
 export const StyledFlatList = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  overflow-x: auto;
   gap: 10px;
-  padding: 20px 10px 0 10px;
-  justify-content: center;
-  `
-;
+  padding: 10px 0;
+  scroll-behavior: smooth; 
+  white-space: nowrap; 
+  margin-left:10px;
+`;
 // Card Image
 export const CardImage = styled.img`
-  height: 320px;
-  width: 150px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
   z-index: 2;
 `;
-
 // Container for the page
 export const PageContainer = styled.div`
   width: 100%;
