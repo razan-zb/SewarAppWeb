@@ -118,8 +118,9 @@ export const SmallContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  min-width: 180px; 
-  height: 300px; /* Adjust height as needed */
+  min-width:180px;
+  width: 200px; 
+  height: 300px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,7 +344,7 @@ export const firstView = styled.div`
 export const StyledFlatList = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 10px;
   padding: 10px 0;
   scroll-behavior: smooth; 
