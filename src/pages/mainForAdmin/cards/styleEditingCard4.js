@@ -89,8 +89,9 @@ export const BlurredBackground = styled.div`
 `;
 
 export const Card = styled.div`
-  min-width: 180px; 
-  height: 300px; /* Adjust height as needed */
+  min-width:180px;
+  width: 200px; 
+  height: 300px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +104,7 @@ export const Card = styled.div`
 export const StyledFlatList = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 10px;
   padding: 10px 0;
   scroll-behavior: smooth; 
@@ -125,6 +126,7 @@ export const PageContainer = styled.div`
   background-color: #fff;
   display: flex;
   flex-direction: column;
+
 `;
 export const ContentContainer = styled.div`
   display: flex;
@@ -154,6 +156,7 @@ export const EditableInput = styled.textarea`
   background-color: #f9f9f9;
   padding: 10px;
   resize: none;
+  height:150px;
 `;
 export const DescriptionText = styled.p`
   font-size: 16px;
@@ -251,14 +254,17 @@ export const StyledFlatList1 = styled.div`
 // Menu Container for dropdown
 export const MenuContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   background-color: #fff;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 700px;
   width: 100%;
-  max-width: 600px;
-  height: 600px;
-  z-index: 1000;
+
+  @media (min-width: 600px) {
+    width: 600px;
+    height: 600px;
+  }
 `;
 
 

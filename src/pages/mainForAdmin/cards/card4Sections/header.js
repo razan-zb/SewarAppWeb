@@ -79,7 +79,6 @@ const Header = () => {
                 {t('home')}
           </SC.MenuText>
 
-  
 
           <SC.MenuText
               onClick={() => navigateTo('/mainForAdmin/cards/card4Sections/aboutUsEdit')}

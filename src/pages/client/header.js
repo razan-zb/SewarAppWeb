@@ -88,7 +88,7 @@ const Header = () => {
         <SC.MenuContainer>
          
          <SC.MenuText
-          onClick={() => navigate('/client/mainForClient')}
+          onClick={() => navigate('/client/mainForClient')&&setMenuVisible(false)}
           style={{ cursor: 'pointer' }}>
               {t('home')}
         </SC.MenuText>

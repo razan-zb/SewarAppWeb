@@ -21,46 +21,137 @@ const MainForClient = () => {
     alert(`${title}: ${message}`);
   };
 
-  const handleFileChange = async (e, name, mediaId, isVideo = false) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  
+const changeData = async () => {
+  try {
+    const user = JSON.parse(localStorage.getItem('user')); // Retrieve user data from localStorage
+    if (user) {
+      // Map photos to include id and src
+      const temps = user.miroPhotos.map((photoUrl, index) => ({
+        id: index.toString(),
+        src: photoUrl,
+      }));
+      setItem2(temps); // Update photos state
 
-    const formData = new FormData();
-    formData.append('file', file, `${name}.${isVideo ? 'mp4' : 'png'}`);
+      // Map videos to include id and src
+      const tempsForVideos = user.miroVideos.map((videoUrl, index) => ({
+        id: index.toString(),
+        src: videoUrl,
+      }));
+      setVideo1(tempsForVideos); // Update videos state
+    } else {
+      console.warn('No user data found in localStorage');
+    }
+  } catch (error) {
+    console.error('Failed to fetch user data from localStorage:', error);
+  }
+};
 
+  const pickImage = async (name, imageId) => {
     try {
-      isVideo ? setLoading(true) : setLoading1(true);
-      const uploadFunction = isVideo ? sendVideoFirebase : sendImageFirebase;
-      const downloadURL = await uploadFunction(formData);
-
-      if (downloadURL) {
-        const storedUser = localStorage.getItem('user');
-        const theUser = JSON.parse(storedUser);
-        if (isVideo) {
-          theUser.miroVideos[mediaId] = downloadURL.url;
-          setVideo1(prev =>
-            prev.map(video => (video.id === mediaId ? { ...video, src: downloadURL.url } : video))
-          );
-        } else {
-          theUser.miroPhotos[mediaId] = downloadURL.url;
-          setItem2(prev =>
-            prev.map(photo => (photo.id === mediaId ? { ...photo, src: downloadURL.url } : photo))
-          );
+      // Create an input element for selecting an image file
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*'; // Accept all image types
+  
+      input.onchange = async (event) => {
+        const file = event.target.files[0]; // Get the selected file
+        if (file) {
+          const formData = new FormData();
+          formData.append('file', file, `${name}.png`);
+  
+          try {
+            setLoading1(true);
+  
+            // Send image to the server
+            const downloadURL = await sendImageFirebase(formData);
+  
+            if (downloadURL) {
+              // Retrieve the user from localStorage
+              const theUser = JSON.parse(localStorage.getItem('user'));
+              theUser.miroPhotos[imageId] = downloadURL.url;
+              localStorage.setItem('user', JSON.stringify(theUser)); // Save updated user to localStorage
+  
+              await changeData();
+  
+              const result = await fetchUpdateUser(theUser.email, theUser);
+              if (result.message === 'User updated successfully') {
+                alert('Success: Image uploaded successfully!');
+              }
+  
+              // Update the items2 state with the new image URL
+              const updatedItems2 = items2.map((photo) =>
+                photo.id === imageId ? { ...photo, src: downloadURL.url } : photo
+              );
+              setItem2(updatedItems2);
+            } else {
+              alert('Upload Failed: There was a problem uploading the image.');
+            }
+          } catch (error) {
+            console.error('Error uploading image:', error);
+            alert('Upload Failed: There was a problem uploading the image.');
+          } finally {
+            setLoading1(false);
+          }
         }
-
-        localStorage.setItem('user', JSON.stringify(theUser));
-        const result = await fetchUpdateUser(theUser.email, theUser);
-        if (result.message === "User updated successfully") {
-          showAlert('Success', `${isVideo ? 'Video' : 'Image'} uploaded successfully!`);
-        }
-      } else {
-        showAlert('Upload Failed', 'There was a problem uploading the media.');
-      }
+      };
+  
+      // Trigger the file input click
+      input.click();
     } catch (error) {
-      console.error("Error uploading media:", error);
-      showAlert('Upload Failed', 'There was a problem uploading the media.');
-    } finally {
-      isVideo ? setLoading(false) : setLoading1(false);
+      console.error('Error picking image:', error);
+    }
+  };
+  const pickVideo = async (name, videoId) => {
+    try {
+      // Create an input element for selecting a video file
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'video/mp4'; // Accept only mp4 videos
+  
+      input.onchange = async (event) => {
+        const file = event.target.files[0]; // Get the selected file
+        if (file) {
+          const formData = new FormData();
+          formData.append('file', file, `${name}.mp4`);
+  
+          try {
+            setLoading(true);
+  
+            // Upload the video to Firebase (or any server)
+            const downloadURL = await sendVideoFirebase(formData);
+  
+            if (downloadURL) {
+              // Retrieve the user from localStorage
+              const theUser = JSON.parse(localStorage.getItem('user'));
+              theUser.miroVideos[videoId] = downloadURL.url;
+              localStorage.setItem('user', JSON.stringify(theUser)); // Save updated user to localStorage
+  
+              await changeData();
+  
+              const result = await fetchUpdateUser(theUser.email, theUser);
+              if (result.message === 'User updated successfully') {
+                alert('Success: Video uploaded successfully!');
+              }
+  
+              const updatedVideo2 = video1.map((video) =>
+                video.id === videoId ? { ...video, src: downloadURL.url } : video
+              );
+              setVideo1(updatedVideo2);
+            }
+          } catch (error) {
+            console.error('Error uploading video:', error);
+            alert('Upload Failed: There was a problem uploading the video.');
+          } finally {
+            setLoading(false);
+          }
+        }
+      };
+  
+      // Trigger the file input click
+      input.click();
+    } catch (error) {
+      console.error('Error picking video:', error);
     }
   };
 
@@ -108,7 +199,7 @@ const MainForClient = () => {
                       type="file"
                       accept="image/*"
                       style={{ marginLeft: '10px' }}
-                      onChange={e => handleFileChange(e, `mario${item.id}`, item.id)}
+                      onClick={() => pickImage("mario"+item.id,item.id)}
                     />
                   </>
                 )}
@@ -139,7 +230,7 @@ const MainForClient = () => {
                     <input
                       type="file"
                       accept="video/*"
-                      onChange={e => handleFileChange(e, `marioVideo${item.id}`, item.id, true)}
+                      onClick={() => pickVideo(`marioVideo${item.id}`, item.id)}
                     />
                   </>
                 )}
@@ -156,7 +247,7 @@ const MainForClient = () => {
                 size={25}
                 color="#73224B"
                 style={{ cursor: 'pointer' }}
-                onClick={() => navigate(`/mainForAdmin/cards/card4Sections/listOfItemsEdit?category=${type}`)}
+                onClick={() => navigate(`/mainForAdmin/cards/card4Sections/listOfItesEdit?category=${type}`)}
               />
             </SC.Smallcontainer>
 
@@ -164,7 +255,7 @@ const MainForClient = () => {
               {items
                 .filter(item => item.type === type)
                 .map(item => (
-                  <SC.Card key={item._id} onClick={() => navigate(`/mainForAdmin/cards/card4Sections/detailsScreenEdit?id=${item._id}`)}>
+                  <SC.Card key={item._id} onClick={() => navigate(`/mainForAdmin/cards/card4Sections/listOfItesEdit?id=${item._id}`)}>
                     <SC.BlurredBackground style={{ backgroundImage: `url(${item.photos[0]})` }} />
                     <SC.CardImage src={item.photos[0]} alt="Card" />
                   </SC.Card>

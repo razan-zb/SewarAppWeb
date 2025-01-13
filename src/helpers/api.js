@@ -27,10 +27,18 @@ export const sendVideoFirebase = async (formData) => {
 // Sending an image to the server
 export const sendImageFirebase = async (formData) => {
   try {
+    console.log("In image ");
+    console.log("File:", formData.get("file"));
     const response = await fetch(`${BASE_URL}/user/uploudImage`, {
       method: 'POST',
       body: formData,
     });
+    if (!response.ok) {
+      const error = await response.text(); // Read the response text
+      console.error('Server Response:', error);
+      throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+
     if (response.ok) {
       const result = await response.json();
       return result;
