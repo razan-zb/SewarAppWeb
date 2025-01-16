@@ -32,10 +32,6 @@ const DetailsScreen = () => {
     fetchData();
   }, []);
 
-  // Viewable items handler
-  const handleViewableItemsChanged = useCallback((index) => {
-    setCurrentIndex(index);
-  }, []);
 
   const handleTabPress = () => {
     setActiveTab(prev => !prev);

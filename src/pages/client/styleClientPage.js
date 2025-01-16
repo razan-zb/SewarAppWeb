@@ -388,6 +388,7 @@ export const ViewSection = styled.div`
 export const ImageContainer = styled.div`
   flex: none; /* Prevent shrinking */
   width: 100vw; /* Full width of the viewport */
+  height: ${(props) => (props.height ? `${props.height}px` : '700px')};
   position: relative;
   scroll-snap-align: start; /* Snap alignment */
 `;

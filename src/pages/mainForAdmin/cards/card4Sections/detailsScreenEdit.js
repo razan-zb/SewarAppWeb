@@ -86,9 +86,7 @@ const DetailsScreen = () => {
     setActiveTab(!activeTab);
   };
 
-  const handleViewableItemsChanged = useCallback(({ target }) => {
-    setCurrentIndex(parseInt(target.dataset.index, 10));
-  }, []);
+
 
   return item1 ? (
     <SC.PageContainer2>
@@ -150,8 +148,8 @@ const DetailsScreen = () => {
               />
 
               <SC.miniView>
-                <button onClick={handleSave}>Save</button>
-                <button onClick={handleDelete}>Delete</button>
+                <SC.handlebutton onClick={handleSave}>Save</SC.handlebutton>
+                <SC.handlebutton onClick={handleDelete}>Delete</SC.handlebutton>
               </SC.miniView>
             </>
           ) : (

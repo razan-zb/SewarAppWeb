@@ -142,7 +142,7 @@ export const FixedHeaderContainer = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
 `;
 export const EditableInput = styled.textarea`
-  width: 100%;
+  width: 80%;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
@@ -151,6 +151,7 @@ export const EditableInput = styled.textarea`
   padding: 10px;
   resize: none;
   height:150px;
+  text-align:center;
 `;
 export const DescriptionText = styled.p`
   font-size: 16px;
@@ -313,11 +314,15 @@ export const ButtonText = styled.span`
 
 // Details Section
 export const Details = styled.div`
+  display:flex;
+  flex-direction:column;
   background-color: #cccccc;
   opacity: 0.7;
-  padding: 20px;
+  align-items: center;
   width: 100%;
-  text-align: center;
+  height: 250px;
+  margin-top: 10px;
+  opacity: 1;
 `;
 
 // Price Text
@@ -334,6 +339,17 @@ export const miniView = styled.div`
   margin-top: 10px;
 `;
 
+export const handlebutton=styled.button`
+  width:70px;
+  color:#fff;
+  border:none;
+  background-color:#73224b;
+  margin-bottom:10px;
+  height:40px;
+  font-size: 16px;
+
+  `
+
 export const ArrowButton = styled.button`
   align-self:center;
    border-radius: 5px;
@@ -344,7 +360,7 @@ export const ArrowButton = styled.button`
    background-color:  #b3b3b3;
    margin-bottom:10px;
    z-index:2000;
-   margin-top:15px;
+   margin-top: ${(prop) => (prop.activeTab ? `-150px` : '20px')};
    border:none;
 `;
 
