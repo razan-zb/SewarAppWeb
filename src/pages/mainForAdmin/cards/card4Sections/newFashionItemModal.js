@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import * as S from '../sections/sectionsStyle';
-import { FontAwesome } from 'react-icons/fa';
 import { featchCreateFashionItem, sendImageFirebase } from "../../../../helpers/api";
 import { useTranslation } from 'react-i18next';
 
@@ -34,6 +33,10 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
+    if (!file) {
+      alert('No file selected');
+      return;
+    }
     if (file && name && sizeRange && price) {
       const formData = new FormData();
       formData.append('file', file, `${name}${photos.length}.png`);
@@ -55,17 +58,16 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
   };
   const handleAddNewType = () => {
     if (newType.trim() === '') {
-      window.alert('Please enter a valid type'); // Using window.alert for clarity, though alert works the same
+      window.alert('Please enter a valid type');
       return;
     }
   
     const newTypeItem = { label: newType, value: newType };
-    setItems([...items, newTypeItem]); 
+    setItems((prevItems) => [...prevItems, newTypeItem]); 
     setType(newType); 
     setIsAddingNewType(false); 
-    setNewType('');
-  
-    window.alert('New type added!'); // Using window.alert for clarity
+    setNewType(''); 
+    window.alert('New type added!');
   };
   const handleSaveItem = async () => {
     if (!name || !sizeRange || !price || photos.length === 0) {
@@ -120,22 +122,37 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
           value={sizeRange}
           onChange={(e) => setSizeRange(e.target.value)}
         />
+        <S.ModalInput2
+          type="number"
+          placeholder={t('pricePlaceholder')}
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
         <select
-          style={styles.dropdown}
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option value="">{t('selectTypePlaceholder')}</option>
-          {items.map((item, index) => (
-            <option key={index} value={item.value}>
-              {item.label}
-            </option>
-          ))}
-          <option value="add-new">{t('addNewTypeLabel')}</option>
-        </select>
+            style={styles.dropdown}
+            value={isAddingNewType ? '' : type} // Prevent "add-new" from being set as type
+            onChange={(e) => {
+              const selectedValue = e.target.value;
+              if (selectedValue === 'add-new') {
+                setIsAddingNewType(true); // Show input for new type
+                setType(''); // Clear the type to avoid "add-new" being used
+              } else {
+                setType(selectedValue); // Update type normally
+                setIsAddingNewType(false); // Hide new type input
+              }
+            }}
+          >
+            <option value="">{t('selectTypePlaceholder')}</option>
+            {items.map((item, index) => (
+              <option key={index} value={item.value}>
+                {item.label}
+              </option>
+            ))}
+            <option value="add-new">{t('addNewTypeLabel')}</option>
+          </select>
 
         {isAddingNewType && (
-          <div style={styles.newTypeSection}>
+          <S.newTypeSection>
             <input
               type="text"
               placeholder={t('addNewTypeLabel')}
@@ -143,16 +160,11 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
               onChange={(e) => setNewType(e.target.value)}
             />
             <button onClick={() => handleAddNewType(newType)}>{t('addNewTypeLabel')}</button>
-          </div>
+          </S.newTypeSection>
         )}
 
-        <S.ModalInput2
-          type="number"
-          placeholder={t('pricePlaceholder')}
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <textarea
+        
+        <S.AddDiscreption
           placeholder={t('descriptionPlaceholder')}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -161,7 +173,7 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
 
         <div style={styles.photosSection}>
           <p>{t('photosLabel')}</p>
-          <input type="file" onChange={handleFileChange} accept="image/*" />
+          <input type="file" accept="image/*" onChange={handleFileChange}/>
           <div style={styles.photosPreview}>
             {photos.map((photo, index) => (
               <img key={index} src={photo} alt={`Photo ${index + 1}`} style={styles.photo} />
@@ -207,12 +219,12 @@ const styles = {
     cursor: 'pointer',
   },
   dropdown: {
-    width: '100%',
+    width: '270px',
     padding: '10px',
     margin: '10px 0',
   },
   textArea: {
-    width: '100%',
+    width: '300px',
     height: '100px',
     padding: '10px',
     margin: '10px 0',
@@ -240,6 +252,9 @@ const styles = {
     borderRadius: '4px',
     cursor: 'pointer',
   },
+  newTypeSection:{
+    gap:'10',
+  }
 };
 
 export default AddItemModal;

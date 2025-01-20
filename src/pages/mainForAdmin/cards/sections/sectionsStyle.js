@@ -27,6 +27,16 @@ export const ModalInput2 = styled.input`
   width: 250px;
 
 `;
+
+export const AddDiscreption =styled.textarea`
+
+
+`
+export const newTypeSection =styled.div`
+  gap:10px;
+
+`
+
 export const SearchInput = styled.input`
   font-size: 20px;
   color: #b30059;

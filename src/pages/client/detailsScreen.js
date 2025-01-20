@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as SC from './styleClientPage'; 
 import { FaArrowUp, FaArrowDown,FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const DetailsScreen = () => {
+  // eslint-disable-next-line no-unused-vars
   const [currentIndex, setCurrentIndex] = useState(0);
   const [item1, setItem] = useState(null);
   const [TheImages, setImages] = useState([]);

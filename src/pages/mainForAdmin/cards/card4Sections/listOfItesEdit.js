@@ -18,7 +18,7 @@ const ItemList = () => {
     setFashionItems([...fashionItems, newItem]);
   };
 
-  // Function to toggle modal visibility
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };

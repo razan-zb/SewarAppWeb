@@ -53,7 +53,7 @@ const ItemList = () => {
         <Header />
       </S.FixedHeaderContainer>
       <S.TitleForPage6>
-        {category === 'All' ? 'Full Catalog' : `${category} Catalog`}
+        {category === 'All' ? 'Full Catalog' : `${category}`}
       </S.TitleForPage6>
 
       <S.StyledFlatList1>

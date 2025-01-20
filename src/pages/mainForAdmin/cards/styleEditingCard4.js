@@ -347,6 +347,7 @@ export const handlebutton=styled.button`
   margin-bottom:10px;
   height:40px;
   font-size: 16px;
+  text-align:center;
 
   `
 
@@ -362,6 +363,7 @@ export const ArrowButton = styled.button`
    z-index:2000;
    margin-top: ${(prop) => (prop.activeTab ? `-150px` : '20px')};
    border:none;
+   text-align:center;
 `;
 
 export const DotContainer = styled.div`

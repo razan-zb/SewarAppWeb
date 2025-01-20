@@ -1,5 +1,5 @@
 // firebaseConfig.js
-import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration

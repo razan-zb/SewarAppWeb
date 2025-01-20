@@ -9,7 +9,6 @@ import { fetchUpdateUser, sendVideoFirebase, sendImageFirebase } from "../../../
 const MainForClient = () => {
   const navigate = useNavigate();
   const scrollViewRef = useRef();
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [items2, setItem2] = useState([]);
   const [video1, setVideo1] = useState([]);
   const [items, setItems] = useState([]);
@@ -17,11 +16,7 @@ const MainForClient = () => {
   const [loading1, setLoading1] = useState(false);
   const [types, setTypes] = useState([]);
 
-  const showAlert = (title, message) => {
-    alert(`${title}: ${message}`);
-  };
 
-  
 const changeData = async () => {
   try {
     const user = JSON.parse(localStorage.getItem('user')); // Retrieve user data from localStorage
@@ -38,6 +33,8 @@ const changeData = async () => {
         id: index.toString(),
         src: videoUrl,
       }));
+
+
       setVideo1(tempsForVideos); // Update videos state
     } else {
       console.warn('No user data found in localStorage');
@@ -107,10 +104,10 @@ const changeData = async () => {
       // Create an input element for selecting a video file
       const input = document.createElement('input');
       input.type = 'file';
-      input.accept = 'video/mp4'; // Accept only mp4 videos
+      input.accept = 'video/mp4'; 
   
       input.onchange = async (event) => {
-        const file = event.target.files[0]; // Get the selected file
+        const file = event.target.files[0]; 
         if (file) {
           const formData = new FormData();
           formData.append('file', file, `${name}.mp4`);
@@ -165,6 +162,8 @@ const changeData = async () => {
       setItems(parsedResults);
       setItem2(theUser.miroPhotos.map((src, id) => ({ id, src })));
       setVideo1(theUser.miroVideos.map((src, id) => ({ id, src })));
+
+
     } catch (error) {
       console.error('Failed to fetch user from storage:', error);
     }

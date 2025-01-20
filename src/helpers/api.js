@@ -4,7 +4,7 @@ import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '../firebaseConfig'; 
 
 const BASE_URL = 'https://sewarappserverside.onrender.com/api';
-
+// const BASE_URL = "http://localhost:3000/api"; 
 // Sending a video to the server
 export const sendVideoFirebase = async (formData) => {
   try {
@@ -27,18 +27,10 @@ export const sendVideoFirebase = async (formData) => {
 // Sending an image to the server
 export const sendImageFirebase = async (formData) => {
   try {
-    console.log("In image ");
-    console.log("File:", formData.get("file"));
     const response = await fetch(`${BASE_URL}/user/uploudImage`, {
       method: 'POST',
       body: formData,
     });
-    if (!response.ok) {
-      const error = await response.text(); // Read the response text
-      console.error('Server Response:', error);
-      throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-
     if (response.ok) {
       const result = await response.json();
       return result;
@@ -248,7 +240,6 @@ export const featchCreateFashionItem = async (item) => {
 
 
 export const fetchDeleteTask = async (taskId) => {
-  console.log(taskId)
   try {
     const response = await fetch(`${BASE_URL}/task/${taskId}`, {
       method: 'DELETE', // Use DELETE method to remove the task
@@ -291,7 +282,6 @@ export const fetchUpdateTask = async (taskId, updatedTaskData) => {
 };
 
 export const fetchUpdateUser = async (userEmail, updatedUserData) => {
-  console.log('Updating user:', userEmail);
   try {
     const response = await fetch(`${BASE_URL}/user/${userEmail}`, {
       method: 'PUT', 

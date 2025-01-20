@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as SC from '../styleEditingCard4';
 import Header from './header';
 import { FaTimes, FaPencilAlt } from 'react-icons/fa';
-import { useNavigate, useParams } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; 
 import { UpdateFashionItem, DeleteFashionItem } from '../../../../helpers/api';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 const DetailsScreen = () => {
   const navigate = useNavigate();
-  const { id } = useParams(); 
+  // eslint-disable-next-line no-unused-vars
   const [currentIndex, setCurrentIndex] = useState(0);
   const [item1, setItem] = useState();
   const [TheImages, setImages] = useState([]);
