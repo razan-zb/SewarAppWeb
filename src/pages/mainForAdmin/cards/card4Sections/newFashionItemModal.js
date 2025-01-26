@@ -70,7 +70,7 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
     window.alert('New type added!');
   };
   const handleSaveItem = async () => {
-    if (!name || !sizeRange  || photos.length === 0) {
+    if (!name || !sizeRange || !price || photos.length === 0) {
       alert('Please fill all fields and upload at least one photo.');
     } else {
       const newItem = {
@@ -85,15 +85,21 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
 
       try {
         setLoading(true);
-        await featchCreateFashionItem(newItem);
-        saveItem(newItem);
-        alert('The item was uploaded successfully.');
-        setModalVisible(false);
-        setName('');
-        setSizeRange('');
-        setPrice('');
-        setDescription('');
-        setPhotos([]);
+        const result=await featchCreateFashionItem(newItem);
+        if(result){
+          saveItem(newItem);
+          alert('The item was uploaded successfully.');
+          setModalVisible(false);
+          setName('');
+          setSizeRange('');
+          setPrice('');
+          setDescription('');
+          setPhotos([]);
+        }else{
+          alert('The item was failed.');
+
+        }
+        
       } catch (error) {
         console.error("Error uploading item:", error);
         alert('Upload Failed: There was a problem uploading the item.');
