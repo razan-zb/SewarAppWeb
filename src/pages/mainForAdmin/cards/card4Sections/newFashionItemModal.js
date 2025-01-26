@@ -70,9 +70,15 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
     window.alert('New type added!');
   };
   const handleSaveItem = async () => {
-    if (!name || !sizeRange || !price || photos.length === 0) {
-      alert('Please fill all fields and upload at least one photo.');
-    } else {
+    if (!name) {
+      alert(t('name is required')); 
+      return false;
+    }
+    if (photos.length === 0) {
+      alert('upload at least one photo.')
+      return false;
+    }
+
       const newItem = {
         _id: name,
         name,
@@ -106,7 +112,7 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
       } finally {
         setLoading(false);
       }
-    }
+    
   };
 
   return isVisible ? (
