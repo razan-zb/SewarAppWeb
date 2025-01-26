@@ -256,3 +256,34 @@ export const TitleForPage3 = styled.h1`
   font-weight: bold;
   font-family: 'CustomFontName4';
 `;
+
+export const ClientChaContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+`;
+
+export const ClientContentContainer = styled.div`
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
+export const BackArrowContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const TextLabel = styled.h2`
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+`;

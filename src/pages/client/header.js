@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import * as SC from './styleClientPage'; // Adjusted styles for web
 import logo from '../../assets/images/SewarLogo.png'; // Ensure the logo path is correct
 import { useTranslation } from 'react-i18next'; // For translation
-import { FaArrowLeft, FaBars, FaInstagram, FaWhatsapp } from 'react-icons/fa'; // React icons
+import { FaArrowLeft, FaBars, FaInstagram, FaWhatsapp ,FaGlobe} from 'react-icons/fa'; // React icons
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'; // Dropdown icons
 import { useNavigate,useLocation } from 'react-router-dom';
-
 const Header = () => {
   const { t } = useTranslation();
   const [menuVisible, setMenuVisible] = useState(false);
@@ -57,7 +56,9 @@ const Header = () => {
       navigate('/client/mainForClient');
     }
   };
-
+  const openOverviewPage = () => {
+    navigate('/client/headerSections/clientChangeLanguage'); // Replace with your route for the overview page
+  };
   return (
     <SC.HeaderWrapper>
       <SC.HeaderContainer>
@@ -171,6 +172,12 @@ const Header = () => {
                   'https://www.instagram.com/siwardesign_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
                 )
               }
+              style={{ cursor: 'pointer' }}
+            />
+             <FaGlobe
+              size={30}
+              color="#73224B"
+              onClick={openOverviewPage}
               style={{ cursor: 'pointer' }}
             />
           </div>

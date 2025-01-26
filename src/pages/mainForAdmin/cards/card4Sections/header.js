@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import * as SC from '../styleEditingCard4';
 import logo from '../../../../assets/images/SewarLogo1.png';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import {  useNavigate, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaBars, FaInstagram, FaWhatsapp } from 'react-icons/fa'; // For icons
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-
 const Header = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -46,6 +45,7 @@ const Header = () => {
   const navigateToCategory = (category) => {
     navigate(`/mainForAdmin/cards/card4Sections/listOfItesEdit?category=${category}`);
   };
+
 
   const navigateTo = (path) =>{
     navigate(path)
@@ -129,6 +129,7 @@ const Header = () => {
               onClick={() => openUrl('https://www.instagram.com/siwardesign_?igsh=MWJrbDVocGNjaWhvZQ==')}
               style={{ cursor: 'pointer' }}
             />
+    
           </div>
         </SC.MenuContainer>
       )}

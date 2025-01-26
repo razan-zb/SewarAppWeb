@@ -22,7 +22,7 @@ import AboutUsEdit from './pages/mainForAdmin/cards/card4Sections/aboutUsEdit';
 import ContactUsEdit from './pages/mainForAdmin/cards/card4Sections/contactUsEdit'
 import ListOfItesEdit from './pages/mainForAdmin/cards/card4Sections/listOfItesEdit'
 import DetailsScreenEdit from './pages/mainForAdmin/cards/card4Sections/detailsScreenEdit'
-
+import ClientChangeLanguage from './pages/client/headerSections/clientChangeLanguage';
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
@@ -48,6 +48,7 @@ function App() {
           <Route path="/mainForAdmin/cards/card4Sections/contactUsEdit" element={<ContactUsEdit/>} />
           <Route path="/mainForAdmin/cards/card4Sections/listOfItesEdit" element={<ListOfItesEdit/>} />
           <Route path="/mainForAdmin/cards/card4Sections/detailsScreenEdit" element={<DetailsScreenEdit/>} />
+          <Route path="/client/headerSections/clientChangeLanguage" element={<ClientChangeLanguage/>} />
 
           
 
