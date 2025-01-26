@@ -186,7 +186,7 @@ export const MenuContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 800px;
+  height: 750px;
   width: 100%;
 
   @media (min-width: 600px) {
