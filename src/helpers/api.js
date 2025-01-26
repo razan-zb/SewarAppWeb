@@ -186,18 +186,34 @@ export const featchsaveClient = async (firstName, lastName, phone, eventDate, va
     wristCircumference: values.wristCircumference, 
     handCircumference: values.handCircumference, 
     sleeveLength: values.sleeveLength, 
-    notes:notes,
+    underBustHeight: values.underBustHeight, 
+    skirtLength: values.skirtLength, 
+    underBustCircumference: values.underBustCircumference, 
+    bustCoverage: values.bustCoverage, 
+    notes: notes,
   };
 
   try {
-    const response = await axios.post(`${BASE_URL}/client/create`, clientData);
-    return response.status === 201;
+    const response = await fetch('/api/clients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(clientData),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      return result;
+    } else {
+      console.error('Error saving client data:', response.statusText);
+      return null;
+    }
   } catch (error) {
     console.error('Error saving client data:', error);
-    return false;
+    return null;
   }
 };
-
 // Create task
 export const featchCreateTask = async (description, date, startTime, endTime, createdBy, notificationTriggerTime, notificationTriggerShow, notificationScheduled) => {
   const taskData = {

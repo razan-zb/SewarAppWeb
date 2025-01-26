@@ -89,7 +89,9 @@
   "saveButton": "שמור",
   "successMessage": "הפריט הועלה בהצלחה.",
   "uploadFailedMessage": "הייתה בעיה בהעלאת הנתונים.",
-  "warningMessage": "מלא את כל השדות תחילה."
-
-
+  "warningMessage": "מלא את כל השדות תחילה.",
+  "underBustHeight": "גובה מתחת לחזה",
+  "skirtLength": "אורך החצאית",
+  "underBustCircumference": "היקף מתחת לחזה",
+  "bustCoverage": "כיסוי חזה"
 }

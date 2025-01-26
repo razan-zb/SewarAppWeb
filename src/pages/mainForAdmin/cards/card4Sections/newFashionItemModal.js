@@ -37,7 +37,7 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
       alert('No file selected');
       return;
     }
-    if (file && name && sizeRange && price) {
+    if (file && name) {
       const formData = new FormData();
       formData.append('file', file, `${name}${photos.length}.png`);
       try {
@@ -70,15 +70,15 @@ const AddItemModal = ({ isVisible, setModalVisible, toggleModal, saveItem }) => 
     window.alert('New type added!');
   };
   const handleSaveItem = async () => {
-    if (!name || !sizeRange || !price || photos.length === 0) {
+    if (!name || !sizeRange  || photos.length === 0) {
       alert('Please fill all fields and upload at least one photo.');
     } else {
       const newItem = {
         _id: name,
         name,
         size: sizeRange,
-        price,
-        description,
+        price: price || '',
+        description: description || '',
         photos,
         type,
       };

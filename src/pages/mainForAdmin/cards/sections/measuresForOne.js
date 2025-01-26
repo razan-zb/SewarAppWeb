@@ -7,10 +7,9 @@ import { useTranslation } from 'react-i18next';
 import NoteModal from './noteModel';
 import { useNavigate } from 'react-router-dom';
 
-
 const MeasuresForOne = () => {
   const location = useLocation();
-  const user = location.state||{};
+  const user = location.state || {};
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -25,6 +24,7 @@ const MeasuresForOne = () => {
 
   const measurementFields = {
     chestHeight: user.chestHeight || '',
+    underBustHeight: user.underBustHeight || '', 
     frontWaistHeight: user.frontWaistHeight || '',
     hipHeight: user.hipHeight || '',
     backWaistHeight: user.backWaistHeight || '',
@@ -33,25 +33,28 @@ const MeasuresForOne = () => {
     fullLength: user.fullLength || '',
     shoulderWidth: user.shoulderWidth || '',
     shoulderSlope: user.shoulderSlope || '',
+    bustCoverage: user.bustCoverage || '', 
     bustDistance: user.bustDistance || '',
     bustCircumference: user.bustCircumference || '',
     waistCircumference: user.waistCircumference || '',
     hipCircumference: user.hipCircumference || '',
+    underBustCircumference: user.underBustCircumference || '', 
     sleeveCircumference: user.sleeveCircumference || '',
     wristCircumference: user.wristCircumference || '',
     handCircumference: user.handCircumference || '',
     sleeveLength: user.sleeveLength || '',
+    skirtLength: user.skirtLength || '', // New field
   };
 
   const [values, setValues] = useState(measurementFields);
 
   useEffect(() => {
     if (user) {
-      user.firstName===undefined?setName(""):setName(user.firstName + " " + user.lastName);
+      user.firstName === undefined ? setName('') : setName(user.firstName + ' ' + user.lastName);
       setPhoneNumber(user.phoneNumber || '');
       if (user.lastModifingDate) setDate(new Date(user.lastModifingDate));
       if (user.eventDate) setDate2(new Date(user.eventDate));
-      setNotes(user.notes|| '');
+      setNotes(user.notes || '');
     }
   }, []);
 
@@ -112,10 +115,7 @@ const MeasuresForOne = () => {
 
   return (
     <S.ContainerOneM>
-      <S.BackArrow onClick={() => navigate(-1)}>
-        &larr;
-      </S.BackArrow>
-
+      <S.BackArrow onClick={() => navigate(-1)}>&larr;</S.BackArrow>
 
       <S.InputsContainer>
         <S.DateLabel>{t('name_label')}</S.DateLabel>
@@ -170,9 +170,9 @@ const MeasuresForOne = () => {
       </S.ScrollContainer>
 
       <S.ButtonsContainer>
-      <S.SaveButton onClick={handleSave}>{t('saveButton')}</S.SaveButton>
-      <S.NoteButton onClick={toggleModal}>{t('note_button_text')}</S.NoteButton>
-    </S.ButtonsContainer>
+        <S.SaveButton onClick={handleSave}>{t('saveButton')}</S.SaveButton>
+        <S.NoteButton onClick={toggleModal}>{t('note_button_text')}</S.NoteButton>
+      </S.ButtonsContainer>
 
       <NoteModal
         isVisible={isModalVisible}

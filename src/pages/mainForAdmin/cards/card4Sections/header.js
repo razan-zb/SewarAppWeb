@@ -120,13 +120,13 @@ const Header = () => {
             <FaInstagram
               size={30}
               color="#E4405F"
-              onClick={() => openUrl('https://www.instagram.com/yourusername')}
+              onClick={() => openUrl('https://www.instagram.com/siwardesign_?igsh=MWJrbDVocGNjaWhvZQ==')}
               style={{ cursor: 'pointer', marginRight: '10px' }}
             />
             <FaWhatsapp
               size={30}
               color="#25D366"
-              onClick={() => openUrl('https://www.instagram.com/yourusername')}
+              onClick={() => openUrl('https://www.instagram.com/siwardesign_?igsh=MWJrbDVocGNjaWhvZQ==')}
               style={{ cursor: 'pointer' }}
             />
           </div>

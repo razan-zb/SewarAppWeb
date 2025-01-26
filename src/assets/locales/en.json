@@ -92,7 +92,11 @@
     "uploadFailedMessage": "There was a problem uploading the data.",
     "warningMessage": "Fill all the fields first.",
     "notes":"Notes",
-    "enterNote":"Enter notes"
+    "enterNote":"Enter notes",
+    "underBustHeight": "Under Bust Height",
+    "skirtLength": "Skirt Length",
+    "underBustCircumference": "Under Bust Circumference",
+    "bustCoverage": "Bust Coverage"
 
 
 }

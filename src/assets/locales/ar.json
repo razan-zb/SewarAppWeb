@@ -92,7 +92,11 @@
   "uploadFailedMessage": "كانت هناك مشكلة في تحميل البيانات.",
   "warningMessage": "يرجى ملء جميع الحقول أولاً.",
   "cancelButtonText": "للإلغاء",
-  "enterNote":"ادخل ملاحظات"
+  "enterNote":"ادخل ملاحظات",
+  "underBustHeight": "ارتفاع تحت الصدر",
+  "skirtLength": "طول التنورة",
+  "underBustCircumference": "محيط تحت الصدر",
+  "bustCoverage": "قياس تغطية الصدر"
 
 
 }
