@@ -88,17 +88,17 @@ const MeasuresForOne = () => {
       return false;
     }
 
-    for (const field in values) {
-      if (!values[field]) {
-        alert(`${t(field)} ${t('is_required')}`);
-        return false;
-      }
+    // for (const field in values) {
+    //   if (!values[field]) {
+    //     alert(`${t(field)} ${t('is_required')}`);
+    //     return false;
+    //   }
 
-      if (isNaN(values[field])) {
-        alert(`${t(field)} ${t('must_be_numeric')}`);
-        return false;
-      }
-    }
+    //   if (isNaN(values[field])) {
+    //     alert(`${t(field)} ${t('must_be_numeric')}`);
+    //     return false;
+    //   }
+    // }
 
     return true;
   };

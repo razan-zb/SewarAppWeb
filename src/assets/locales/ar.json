@@ -47,10 +47,10 @@
   "hipHeight": "ارتفاع الورك",
   "backWaistHeight": "ارتفاع الخصر الخلفي",
   "waistHeight": "ارتفاع الابط",
-  "kneeHeight": "ارتفاع الركبة",
-  "fullLength": "الطول الكلي",
+  "kneeHeight": "(من الخصر)ارتفاع الركبة",
+  "fullLength": "(من الكتف)الطول الكلي",
   "shoulderWidth": "عرض الأكتاف",
-  "shoulderSlope": "ميلان الأكتاف",
+  "shoulderSlope": "(من الرقبه)ميلان الأكتاف",
   "bustDistance": "مسافة الصدر",
   "bustCircumference": "محيط الصدر",
   "waistCircumference": "محيط الخصر",
@@ -96,7 +96,13 @@
   "underBustHeight": "ارتفاع تحت الصدر",
   "skirtLength": "طول التنورة",
   "underBustCircumference": "محيط تحت الصدر",
-  "bustCoverage": "قياس تغطية الصدر"
+  "bustCoverage": "قياس تغطية الصدر",
+  "validation_error": "هنالك معطى ناقص!",
+  "phone_validation_error": "يجب ادخال رقم هاتف",
+  "is_required": "مطلوب"
+
+
+  
 
 
 }
