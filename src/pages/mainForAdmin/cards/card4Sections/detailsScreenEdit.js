@@ -73,12 +73,23 @@ const DetailsScreen = () => {
   };
 
   const handleDelete = async () => {
-    const result = await DeleteFashionItem(item1._id);
-    if (result) {
-      alert('The item was deleted.');
-      navigate('/mainForAdmin/cards/card4');
+    const userConfirmed = window.confirm('Are you sure you want to delete this item?');
+  
+    if (userConfirmed) {
+      try {
+        const result = await DeleteFashionItem(item1._id);
+        if (result) {
+          alert('The item was deleted.');
+          navigate('/mainForAdmin/cards/card4');
+        } else {
+          alert('Failed to delete the item.');
+        }
+      } catch (error) {
+        console.error('Error deleting item:', error);
+        alert('An error occurred while trying to delete the item.');
+      }
     } else {
-      alert('Failed to delete the item.');
+      alert('The item was not deleted.');
     }
   };
 
