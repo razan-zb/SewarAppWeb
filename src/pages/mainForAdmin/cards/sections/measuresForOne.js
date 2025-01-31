@@ -63,8 +63,11 @@ const MeasuresForOne = () => {
   };
 
   const fetchSave = async () => {
+
     try {
       const [firstName, lastName = ''] = name.split(' ', 2);
+      console.log(firstName);
+
       const respond = await featchsaveClient(firstName, lastName, phoneNumber, date2, values, notes);
 
       if (respond) {

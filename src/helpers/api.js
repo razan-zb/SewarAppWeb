@@ -161,6 +161,7 @@ export const logout = async () => {
 
 // Save client data
 export const featchsaveClient = async (firstName, lastName, phone, eventDate, values, notes) => {
+
   const clientData = {
     firstName: firstName,
     lastName: lastName,
@@ -194,14 +195,7 @@ export const featchsaveClient = async (firstName, lastName, phone, eventDate, va
   };
 
   try {
-    const response = await fetch('/api/clients', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(clientData),
-    });
-
+    const response = await axios.post(`${BASE_URL}/task/create`, clientData);
     if (response.ok) {
       const result = await response.json();
       return result;
