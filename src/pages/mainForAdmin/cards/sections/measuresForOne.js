@@ -78,7 +78,7 @@ const MeasuresForOne = () => {
   };
 
   const checkFields = () => {
-    if (!name || !phoneNumber || !formattedDate || !formattedDate2) {
+    if (!name || !phoneNumber) {
       alert(t('validation_error'));
       return false;
     }
