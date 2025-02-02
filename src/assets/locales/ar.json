@@ -99,7 +99,8 @@
   "bustCoverage": "قياس تغطية الصدر",
   "validation_error": "هنالك معطى ناقص!",
   "phone_validation_error": "يجب ادخال رقم هاتف",
-  "is_required": "مطلوب"
+  "is_required": "مطلوب",
+  "success_message":"تم بنجاح!"
 
 
   

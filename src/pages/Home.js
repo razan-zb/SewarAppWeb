@@ -28,18 +28,18 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const clients = await fetchClientsData();
-      console.log('Clients:', clients.length);
+      // console.log('Clients:', clients.length);
 
       const user = await fetchUserData('sewar.doe@example.com');
       localStorage.setItem('user', JSON.stringify(user));
-      console.log('User:', user.name);
+      // console.log('User:', user.name);
 
       const tasks = await fetchTasksData('1234567890');
-      console.log('Tasks:', tasks.length);
+      // console.log('Tasks:', tasks.length);
 
       const fashionItems = await fetchFashionItemsData();
       localStorage.setItem('fashionItems', JSON.stringify(fashionItems));
-      console.log('Fashion Items:', fashionItems.length);
+      // console.log('Fashion Items:', fashionItems.length);
     } catch (error) {
       console.error('Error fetching data:', error);
     }

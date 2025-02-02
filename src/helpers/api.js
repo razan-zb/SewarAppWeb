@@ -195,14 +195,9 @@ export const featchsaveClient = async (firstName, lastName, phone, eventDate, va
   };
 
   try {
-    const response = await axios.post(`${BASE_URL}/task/create`, clientData);
-    if (response.ok) {
-      const result = await response.json();
-      return result;
-    } else {
-      console.error('Error saving client data:', response.statusText);
-      return null;
-    }
+    const response = await axios.post(`${BASE_URL}/client/create`, clientData);
+    return(response.status === 201);
+   
   } catch (error) {
     console.error('Error saving client data:', error);
     return null;
